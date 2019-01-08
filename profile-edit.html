@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>MEETING SQUARE</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    />
+    <link
+      href="./node_modules/mdbootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./node_modules/dropify/dist/css/dropify.css" />
+
+    <link href="./css/css.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light shadow-none bg-white"
+    >
+      <a class="navbar-brand" href="index.html">
+        <img src="./images/logo_nav.png" height="40" alt="mdb logo" />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#nav-meetingsquare"
+        aria-controls="nav-meetingsquare"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="nav-meetingsquare">
+        <ul id="mainnav" class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="abstract_submission.html"
+              >Abstract Submission</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="abstract_status.html">Abstract Status</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+        </ul>
+        <ul id="lang-ul" class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#!">TH</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#">EN</a></li>
+        </ul>
+
+        <a href="signin.html" class="btn shadow-none btn-rl-nav">
+          Login or <span>Register</span>
+        </a>
+        <div class="btn-group">
+          <button
+            class="btn btn-sm dropdown-toggle shadow-none btn-avatar"
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img src="./images/avatar.jpg" class="img-avatar-btn" />
+          </button>
+
+          <div class="dropdown-menu py-0 dropdown-menu-right">
+            <a class="dropdown-item bg-dropdown active" href="profile.html"
+              >Profile Setting</a
+            >
+            <a class="dropdown-item bg-dropdown" href="#">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="banner-signin">
+              <div class="div-title-underline-signin">
+                <h1 class="mb-1"><strong>Profile Setting</strong></h1>
+                <div class="underline-gra-signin"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 text-left mb-3">
+              <a href="abstract_status.html"
+                ><h5 class="fw-800 c-0E869A">&#60; Back to Profile</h5></a
+              >
+            </div>
+            <div class="col-12 border-bottom mb-5">
+              <div class="row justify-content-center">
+                <div
+                  class="col-12 col-md-3 col-lg-2 py-4 mb-3 d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h4 class="c-133469" style="font-weight: 900;">
+                    <strong>My Profile</strong>
+                  </h4>
+                  <h5 class="c-0E8DA1"><strong>Basic Detail</strong></h5>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3 mb-3 text-center">
+                  <input
+                    class="dropify"
+                    type="file"
+                    data-default-file="./images/profile_demo.png"
+                    data-show-remove="false"
+                    data-allowed-file-extensions="png jpg"
+                    data-show-message="false"
+                  />
+                </div>
+                <div
+                  class="col-12 col-md-4 col-lg-5 py-4 mb-3 d-flex justify-content-center flex-column align-items-center align-items-md-start position-relative"
+                >
+                  <h4 class="c-133469 cs-pt" style="font-weight: 900;" onclick="changeImg();">
+                    <strong
+                      >Change Profile Photo <i class="far fa-edit"></i
+                    ></strong>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">First Name</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="JENJIRA"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Last Name</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="THONGPRASOM"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Username</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="JANE2018"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Company/Institution</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="King International"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Phone Number</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="099-999-9999"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pt-4" style="background-color: #E9EAEA;">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Email Address</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="J12314@gmail.com"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Password</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="password"
+                    value="J12314@gmail.com"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Confirm Password</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="password"
+                    value="J12314@gmail.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-11 col-lg-10 py-4 mb-3 border-bottom">
+              <h4 class="c-133469" style="font-weight: 900;">
+                <strong>Co Authors</strong>
+              </h4>
+            </div>
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">#1</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <h5 class="mb-0 c-0E8DA1"></h5>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">First Name</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value="GABRIED"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Last Name</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                    value=" LOPEZ"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Company/Institution</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3 text-left mb-5">
+                  <h5 class="mb-0">Company/Institution</h5>
+                </div>
+                <div
+                  class="col-12 col-md-3 col-lg-6 text-left text-md-left mb-5"
+                >
+                  <input
+                    class="form-control signup-form"
+                    placeholder="Please Indicate to continue"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 text-center my-3">
+              <a href="profile.html" class="btn btn-edit-profile">Submit</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer pt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row justify-content-around">
+          <div class="col-12 col-lg-6 mt-md-0 mt-3 text-center text-lg-left">
+            <!-- Content -->
+            <h5 class="text-uppercase mb-0">A BUSINESS UNIT OF</h5>
+            <img src="./images/logo_footer.png" style="height: 80px;" />
+            <p>Copyright © 2019 All rights reserved.</p>
+          </div>
+
+          <div class="col-12 col-lg-5 mb-3 text-center text-lg-left">
+            <h5 class="text-uppercase">Contact</h5>
+            <p>
+              246 The Curve Avenue<br />
+              309 Soi Onnut 17, Onnut Road, Onnut Suanluang, Bangkok 10250<br />
+              Tel: +66 2 105 4522 | Email: info@meetingroom.co.th
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+    <script
+      type="text/javascript"
+      src="./node_modules/mdbootstrap/js/jquery-3.3.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/mdbootstrap/js/popper.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/mdbootstrap/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/mdbootstrap/js/mdb.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./node_modules/dropify/dist/js/dropify.js"
+    ></script>
+    <script>
+      function pluscoauthorname() {
+        $("#coauthorname").append(
+          '<input class="form-control signup-form mb-3" placeholder="Please Insert your full name" type="text" />'
+        );
+      }
+    </script>
+    <script>
+      $(".dropify").dropify();
+      function changeImg() {
+        $(".dropify").click();
+      }
+    </script>
+  </body>
+</html>

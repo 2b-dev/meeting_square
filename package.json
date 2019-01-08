@@ -1,0 +1,15 @@
+{
+  "name": "meeting_square",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nu Chaimongkon",
+  "license": "ISC",
+  "dependencies": {
+    "dropify": "^0.2.2",
+    "mdbootstrap": "^4.6.0"
+  }
+}
