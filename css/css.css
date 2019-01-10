@@ -464,6 +464,15 @@ table.table tbody tr td.middle-cell {
 .cs-pt{
   cursor: pointer;
 }
+.custom-btn-footer{
+  color: #fff!important;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  margin-left: 0;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+}
 .btn-intable.icon-bin i{
   color: #FFF;
   font-size: 15px!important;
