@@ -634,7 +634,9 @@ table.table tbody tr td.middle-cell {
 .ck.ck-editor__editable:not(.ck-editor__nested-editable).ck-focused{
   border: 2px solid #133469;
 }
-
+.carousel-indicators .active{
+  background-color: #133469;
+}
 
 @media screen and (min-width: 1024px) {
   main {
