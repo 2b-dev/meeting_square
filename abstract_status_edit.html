@@ -370,9 +370,30 @@
                         <option value="3">Three</option>
                       </select>
                     </div>
+                    <div class="col-12 mb-3">
+                      <div class="file-upload">
+                        <div class="file-select">
+                          <div class="file-select-button" id="fileName">
+                            Choose file
+                          </div>
+                          <div class="file-select-name" id="noFile">
+                            No file chosen...
+                          </div>
+                          <input
+                            type="file"
+                            name="chooseFile"
+                            id="chooseFile"
+                          />
+                        </div>
+                      </div>
+                    </div>
                     <div class="col-12">
                       <div class="form-group shadow-textarea">
-                        <textarea class="form-control text-area-ms" rows="7">
+                        <textarea
+                          id="text-editor"
+                          class="form-control text-area-ms"
+                          rows="7"
+                        >
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
                         </textarea>
                       </div>
@@ -420,7 +441,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh e
               Onnut Road, Onnut Suanluang, Bangkok 10250<br />
               Tel: +66 2 105 4522 | Email: info@meetingroom.co.th
             </p>
-            <button class="btn btn-outline-blue custom-btn-footer">MEETINGROOM.CO.TH</button>
+            <button class="btn btn-outline-blue custom-btn-footer">
+              MEETINGROOM.CO.TH
+            </button>
           </div>
         </div>
       </div>
@@ -442,12 +465,32 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh e
       type="text/javascript"
       src="./node_modules/mdbootstrap/js/mdb.min.js"
     ></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
     <script>
       function pluscoauthorname() {
         $("#coauthorname").append(
           '<input class="form-control signup-form black-text mb-3" placeholder="Please Insert your full name" type="text" />'
         );
       }
+    </script>
+    <script>
+      $("#chooseFile").bind("change", function() {
+        var filename = $("#chooseFile").val();
+        if (/^\s*$/.test(filename)) {
+          $(".file-upload").removeClass("active");
+          $("#noFile").text("No file chosen...");
+        } else {
+          $(".file-upload").addClass("active");
+          $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+        }
+      });
+    </script>
+    <script>
+      ClassicEditor.create(document.querySelector("#text-editor")).catch(
+        error => {
+          console.error(error);
+        }
+      );
     </script>
   </body>
 </html>
