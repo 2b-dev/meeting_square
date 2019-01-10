@@ -101,7 +101,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12 text-right mb-3">
-              <h5 class="fw-800 c-133469">June 30, 2017</h5>
+              <h5 class="fw-800 c-133469">Date : June 30, 2017</h5>
             </div>
             <div class="col-12 mb-3 text-left">
               <h5 class="fw-800 c-133469">
@@ -231,7 +231,7 @@
                 </div>
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
                   <input
-                    class="form-control signup-form"
+                    class="form-control signup-form asb-form"
                     placeholder="Please Insert your full name"
                     type="text"
                   />
@@ -247,7 +247,7 @@
                 </div>
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
                   <input
-                    class="form-control signup-form"
+                    class="form-control signup-form asb-form"
                     placeholder="Please Indicate to continue"
                     type="text"
                   />
@@ -263,7 +263,7 @@
                 </div>
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
                   <input
-                    class="form-control signup-form"
+                    class="form-control signup-form asb-form"
                     placeholder="Please Indicate to continue"
                     type="email"
                   />
@@ -279,7 +279,7 @@
                 </div>
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
                   <input
-                    class="form-control signup-form"
+                    class="form-control signup-form asb-form"
                     placeholder="Please Indicate to continue"
                     type="email"
                   />
@@ -295,7 +295,7 @@
                 </div>
                 <div id="coauthorname" class="col-12 col-md-9 col-lg-10">
                   <input
-                    class="form-control signup-form mb-3"
+                    class="form-control signup-form asb-form mb-3"
                     placeholder="Please Insert your full name"
                     type="text"
                   />
@@ -317,7 +317,7 @@
                 </div>
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
                   <input
-                    class="form-control signup-form"
+                    class="form-control signup-form asb-form"
                     placeholder="Please Indicate to continue"
                     type="text"
                   />
@@ -332,7 +332,9 @@
                   Abstract Topic :
                 </div>
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
-                  <select class="browser-default custom-select select-ms">
+                  <select
+                    class="browser-default custom-select select-ms asb-form"
+                  >
                     <option selected disabled
                       >Please selected to continue</option
                     >
@@ -353,7 +355,9 @@
                 <div class="col-12 col-md-9 col-lg-10 mb-3">
                   <div class="row">
                     <div class="col-12 mb-3">
-                      <select class="browser-default custom-select select-ms">
+                      <select
+                        class="browser-default custom-select select-ms asb-form"
+                      >
                         <option selected disabled
                           >Please selected to continue</option
                         >
@@ -362,13 +366,31 @@
                         <option value="3">Three</option>
                       </select>
                     </div>
+                    <div class="col-12 mb-3">
+                      <div class="file-upload">
+                        <div class="file-select">
+                          <div class="file-select-button" id="fileName">
+                            Choose file
+                          </div>
+                          <div class="file-select-name" id="noFile">
+                            No file chosen...
+                          </div>
+                          <input
+                            type="file"
+                            name="chooseFile"
+                            id="chooseFile"
+                          />
+                        </div>
+                      </div>
+                    </div>
                     <div class="col-12">
                       <div class="form-group shadow-textarea">
                         <textarea
-                          class="form-control text-area-ms"
+                          id="text-editor"
+                          class="form-control text-area-ms asb-form"
                           rows="7"
                           placeholder="Abstract is limited to 350 words"
-                        ></textarea>
+                        >Abstract is limited to 350 words</textarea>
                       </div>
                     </div>
                     <div class="col-12 mb-3">
@@ -414,7 +436,9 @@
               Onnut Road, Onnut Suanluang, Bangkok 10250<br />
               Tel: +66 2 105 4522 | Email: info@meetingroom.co.th
             </p>
-            <button class="btn btn-outline-blue custom-btn-footer">MEETINGROOM.CO.TH</button>
+            <button class="btn btn-outline-blue custom-btn-footer">
+              MEETINGROOM.CO.TH
+            </button>
           </div>
         </div>
       </div>
@@ -436,12 +460,32 @@
       type="text/javascript"
       src="./node_modules/mdbootstrap/js/mdb.min.js"
     ></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
     <script>
       function pluscoauthorname() {
         $("#coauthorname").append(
-          '<input class="form-control signup-form mb-3" placeholder="Please Insert your full name" type="text" />'
+          '<input class="form-control signup-form asb-form mb-3" placeholder="Please Insert your full name" type="text" />'
         );
       }
+    </script>
+    <script>
+      $("#chooseFile").bind("change", function() {
+        var filename = $("#chooseFile").val();
+        if (/^\s*$/.test(filename)) {
+          $(".file-upload").removeClass("active");
+          $("#noFile").text("No file chosen...");
+        } else {
+          $(".file-upload").addClass("active");
+          $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+        }
+      });
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#text-editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
   </body>
 </html>
