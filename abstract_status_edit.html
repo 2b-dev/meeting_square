@@ -17,7 +17,10 @@
       rel="stylesheet"
     />
     <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet" />
-
+    <link
+      href="./node_modules/selectize/dist/css/selectize.css"
+      rel="stylesheet"
+    />
     <link href="./css/css.css" rel="stylesheet" />
   </head>
 
@@ -387,6 +390,16 @@
                         </div>
                       </div>
                     </div>
+                    <div class="col-12 mb-3">
+                      <div class="control-group">
+                        <input
+                          type="text"
+                          id="input-tags"
+                          class="demo-default"
+                          value="test, test2"
+                        />
+                      </div>
+                    </div>
                     <div class="col-12">
                       <div class="form-group shadow-textarea">
                         <textarea
@@ -455,6 +468,10 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh e
     ></script>
     <script
       type="text/javascript"
+      src="./node_modules/selectize/dist/js/standalone/selectize.min.js"
+    ></script>
+    <script
+      type="text/javascript"
       src="./node_modules/mdbootstrap/js/popper.min.js"
     ></script>
     <script
@@ -491,6 +508,19 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit,sed diam nonummy nibh e
           console.error(error);
         }
       );
+    </script>
+    <script>
+      $("#input-tags").selectize({
+        persist: false,
+        createOnBlur: true,
+        create: true
+      });
+      $("#input-tags-selectized").focus(function() {
+        $(".selectize-input").addClass("border-focus");
+      });
+      $("#input-tags-selectized").focusout(function() {
+        $(".selectize-input").removeClass("border-focus");
+      });
     </script>
   </body>
 </html>

@@ -17,6 +17,10 @@
       rel="stylesheet"
     />
     <link href="./node_modules/mdbootstrap/css/mdb.min.css" rel="stylesheet" />
+    <link
+      href="./node_modules/selectize/dist/css/selectize.css"
+      rel="stylesheet"
+    />
 
     <link href="./css/css.css" rel="stylesheet" />
   </head>
@@ -383,6 +387,16 @@
                         </div>
                       </div>
                     </div>
+                    <div class="col-12 mb-3">
+                      <div class="control-group">
+                        <input
+                          type="text"
+                          id="input-tags"
+                          class="demo-default"
+                          value=""
+                        />
+                      </div>
+                    </div>
                     <div class="col-12">
                       <div class="form-group shadow-textarea">
                         <textarea
@@ -390,7 +404,9 @@
                           class="form-control text-area-ms asb-form"
                           rows="7"
                           placeholder="Abstract is limited to 350 words"
-                        >Abstract is limited to 350 words</textarea>
+                        >
+Abstract is limited to 350 words</textarea
+                        >
                       </div>
                     </div>
                     <div class="col-12 mb-3">
@@ -450,6 +466,10 @@
     ></script>
     <script
       type="text/javascript"
+      src="./node_modules/selectize/dist/js/standalone/selectize.min.js"
+    ></script>
+    <script
+      type="text/javascript"
       src="./node_modules/mdbootstrap/js/popper.min.js"
     ></script>
     <script
@@ -461,6 +481,7 @@
       src="./node_modules/mdbootstrap/js/mdb.min.js"
     ></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+
     <script>
       function pluscoauthorname() {
         $("#coauthorname").append(
@@ -481,11 +502,25 @@
       });
     </script>
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#text-editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+      ClassicEditor.create(document.querySelector("#text-editor")).catch(
+        error => {
+          console.error(error);
+        }
+      );
+    </script>
+
+    <script>
+      $("#input-tags").selectize({
+        persist: false,
+        createOnBlur: true,
+        create: true
+      });
+      $("#input-tags-selectized").focus(function() {
+        $('.selectize-input').addClass('border-focus');
+      });
+      $("#input-tags-selectized").focusout(function() {
+        $('.selectize-input').removeClass('border-focus');
+      });
     </script>
   </body>
 </html>

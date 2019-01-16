@@ -637,6 +637,31 @@ table.table tbody tr td.middle-cell {
 .carousel-indicators .active{
   background-color: #133469;
 }
+.selectize-input.items.not-full{
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.selectize-control.multi .selectize-input.has-items{
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.selectize-control.multi .selectize-input > div{
+  background-color: #133469;
+  color: #fff;
+  margin: 0;
+  margin-right: 3px;
+}
+.selectize-dropdown, .selectize-input, .selectize-input input{
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.border-focus{
+  border: 2px solid #133469!important;
+}
 
 @media screen and (min-width: 1024px) {
   main {

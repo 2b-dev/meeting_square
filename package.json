@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dropify": "^0.2.2",
-    "mdbootstrap": "^4.6.0"
+    "mdbootstrap": "^4.6.0",
+    "selectize": "^0.12.6"
   }
 }
